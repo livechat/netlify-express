@@ -16,6 +16,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
+    "express-http-proxy": "^1.6.2",
     "express-request-id": "^1.4.1",
     "http-proxy-middleware": "^2.0.1"
   },
