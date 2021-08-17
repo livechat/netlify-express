@@ -14,7 +14,9 @@
   "author": "neverendingqs",
   "license": "Apache-2.0",
   "dependencies": {
-    "dotenv": "^10.0.0"
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "http-proxy-middleware": "^2.0.1"
   },
   "devDependencies": {
     "body-parser": "^1.19.0",
