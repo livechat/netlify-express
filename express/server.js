@@ -31,7 +31,7 @@ router.use(
     changeOrigin: true,
     secure: false,
     pathRewrite: function (path, req) {
-      return path.replace("/.netlify/functions/express/newsletter", "");
+      return path.replace("/.netlify/functions/server/newsletter", "");
     },
     onProxyReq: function onProxyReq(proxyReq, req, res) {
       if (options.token) {
@@ -42,7 +42,7 @@ router.use(
   })
 );
 
-app.use("/.netlify/functions/express", router);
+app.use("/.netlify/functions/server", router);
 
 module.exports = app;
 module.exports.handler = serverless(app);
