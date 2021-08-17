@@ -7,20 +7,12 @@
     "build": "netlify-lambda build express",
     "start": "nodemon server-local.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/neverendingqs/netlify-express.git"
-  },
   "keywords": [
     "netlify",
     "express.js"
   ],
   "author": "neverendingqs",
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/neverendingqs/netlify-express/issues"
-  },
-  "homepage": "https://github.com/neverendingqs/netlify-express#readme",
   "dependencies": {
     "dotenv": "^10.0.0"
   },
