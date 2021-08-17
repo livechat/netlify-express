@@ -22,7 +22,8 @@ router.use(addRequestId);
 
 router.use(
   cors({
-    allowedHeaders: ["Content-Type"],
+    allowedHeaders: ['Accept-Version', 'Authorization', 'Credentials', 'Content-Type'],
+    exposedHeaders: ['X-Request-Id'],
     origin: "*",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     preflightContinue: false,
