@@ -14,7 +14,8 @@ const express = require("express");
 const { createProxyMiddleware } = require("http-proxy-middleware");
 
 const app = express();
-app.use(
+const router = express.Router();
+router.use(
   cors({
     allowedHeaders: ["Content-Type"],
     origin: "*",
@@ -23,14 +24,14 @@ app.use(
   })
 );
 
-app.use(
+router.use(
   "/newsletter",
   createProxyMiddleware({
     target: options.target,
     changeOrigin: true,
     secure: false,
     pathRewrite: function (path, req) {
-      return path.replace("/newsletter", "");
+      return path.replace("/.netlify/functions/express/newsletter", "");
     },
     onProxyReq: function onProxyReq(proxyReq, req, res) {
       if (options.token) {
@@ -40,6 +41,8 @@ app.use(
     },
   })
 );
+
+app.use("/.netlify/functions/express", router);
 
 module.exports = app;
 module.exports.handler = serverless(app);
