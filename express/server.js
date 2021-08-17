@@ -1,4 +1,6 @@
 const serverless = require("serverless-http");
+const addRequestId = require('express-request-id')();
+
 var cors = require("cors");
 
 require("dotenv").config();
@@ -15,6 +17,9 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 
 const app = express();
 const router = express.Router();
+app.use(addRequestId);
+router.use(addRequestId);
+
 router.use(
   cors({
     allowedHeaders: ["Content-Type"],
